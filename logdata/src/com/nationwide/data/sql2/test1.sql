@@ -1,0 +1,1 @@
+create hadoop table test1 (col1 int, col2 varchar(5));

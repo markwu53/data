@@ -1,0 +1,1 @@
+select count(*) from alex_sr.ext_nw_ims_raw
