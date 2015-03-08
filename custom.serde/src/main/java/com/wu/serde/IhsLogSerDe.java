@@ -12,7 +12,7 @@ import org.apache.hadoop.hive.serde2.objectinspector.ObjectInspector;
 import org.apache.hadoop.io.Writable;
 
 @SuppressWarnings("deprecation")
-public class MyCustomSerde implements SerDe {
+public class IhsLogSerDe implements SerDe {
 
         public void initialize(Configuration arg0, Properties arg1) throws SerDeException {
         }
@@ -89,7 +89,7 @@ public class MyCustomSerde implements SerDe {
                         row.add(splits[7].equals("-")? null : splits[7]);
                         row.add(splits[8].equals("-")? null : splits[8]);
                 }
-                return null;
+                return row;
         }
 
         public ObjectInspector getObjectInspector() throws SerDeException {
