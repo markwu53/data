@@ -51,6 +51,22 @@ partitioned by (App string, Path string)
 row format serde 'com.nw.ihslog.serde.IhsLogSerDe'
 ;
 
+create table logdata.aroc (
+    Timestamp string 
+    , Client_Ip string 
+    , Server_Ip string 
+    , Network_Protocol string 
+    , DB_User_Name string 
+    , OS_User string 
+    , Source_Program string 
+    , Service_Name string 
+    , Object_name string 
+    , SQL_Verb string 
+    , Sql string 
+)
+row format serde 'com.bizo.hive.serde.csv.CSVSerde'
+;
+
 ----------------------------------------------------
 -- below are program generated
 ----------------------------------------------------
@@ -72,3 +88,4 @@ load data local inpath '/home/biadmin/Files10000/AAC/Netflow/123-134Flows-117-12
 load data local inpath '/home/biadmin/Files10000/AAC/Netflow/nlvmw0022 .5-117-126.csv' into table logdata.netflow_log partition (App='AAC', Path='nlvmw0022 .5-117-126.csv');
 load data local inpath '/home/biadmin/Files10000/AAC/Netflow/nlvmw0023 .6-117-126.csv' into table logdata.netflow_log partition (App='AAC', Path='nlvmw0023 .6-117-126.csv');
 load data local inpath '/home/biadmin/Files10000/AAC/Netflow/7-.8-117-126-flow.csv' into table logdata.netflow_log partition (App='AAC', Path='7-.8-117-126-flow.csv');
+load data local inpath '/home/biadmin/Files10000/AROC/aroc.csv' into table logdata.aroc;

@@ -13,7 +13,10 @@ public class CreateTables {
         private static final String header = "Flow Type,First Packet Time,Storage Time,Source IP,Source Port,Destination IP,Destination Port,Source Bytes,Destination Bytes,Total Bytes,Source Packets,Destination Packets,Total Packets,Protocol,Application,ICMP Type/Code,Source Flags,Destination Flags,Source QoS,Destination QoS,Flow Source,Flow Interface,Source If Index,Destination If Index,Source ASN,Destination ASN";
 
         public static void main(String[] args) throws FileNotFoundException, IOException {
+                go1();
+        }
 
+        public static void go1() throws FileNotFoundException, IOException {
                 Properties properties = new Properties();
                 properties.load(new FileInputStream("logdata.properties"));
                 schema = properties.getProperty("schema");
