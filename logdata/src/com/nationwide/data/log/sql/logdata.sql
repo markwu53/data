@@ -1,8 +1,8 @@
 --add jar /home/biadmin/mylib/csv-serde-1.1.2.jar;
 --add jar /home/biadmin/mylib/ihs-log-serde.jar;
 
---create schema logdata;
---use logdata;
+create schema logdata;
+use logdata;
 
 create table logdata.netflow_log (
     Flow_Type string 
